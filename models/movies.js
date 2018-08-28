@@ -1,7 +1,44 @@
-'use strict';
+"use strict";
 
-module.exports = function MoviesModel() {
-    return {
-        name: 'movies'
-    };
+const mongoose = require("mongoose");
+
+//  Movie Schema
+const movieSchema = mongoose.Schema({
+    title: String,
+    genre: String,
+    plot: String,
+    director: String,
+    release_date: Date,
+    trailer: String,
+    cover: String
+});
+
+//  Compile schema into model and export it
+const Movies = (module.exports = mongoose.model("Movies", movieSchema));
+
+//  getMovies query
+module.exports.getMovies = function(callback, limit) {
+    Movies.find(callback)
+        .limit(limit)
+        .sort([["title", "ascending"]]);
+};
+
+//  findMovieById query
+module.exports.findMovieById = function(id, callback) {
+    Movies.findById(id, callback);
+};
+
+//  addMovies method
+module.exports.addMovies = function(movie, callback) {
+    Movies.create(movie, callback);
+};
+
+//  editMovie method
+module.exports.editMovies = function(movie, updateMovie, options, callback) {
+    Movies.findOneAndUpdate(movie, updateMovie, options, callback);
+};
+
+//  deleteMovies method
+module.exports.deleteMovies = function(movie, callback) {
+    Movies.remove(movie, callback);
 };
