@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>{+title /}</title>
+        <title>Moviebase</title>
     
         <link rel="stylesheet" href="/css/app.css">
     
@@ -10,6 +10,9 @@
     <body>
 
         <div id="wrapper">
+            {#error}
+              <div>{.msg}</div>
+            {/error}
             {+body /}
         </div>
 
