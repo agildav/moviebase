@@ -15,7 +15,7 @@
         <div>
           <label><strong>Genre: </strong>{.genre}</label>
           <br>
-          <label><strong>Release date: </strong>{.release_date}</label>
+          <label><strong>Release year: </strong>{.release_date}</label>
         </div>
       </div>
       <hr>

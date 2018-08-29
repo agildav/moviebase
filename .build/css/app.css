@@ -4,6 +4,10 @@ body {
   color: beige;
 }
 /* line 10, css/app */
+hr {
+  background-color: #de1a82;
+}
+/* line 14, css/app */
 #particles-js canvas {
   position: fixed;
   top: 0;

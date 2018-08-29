@@ -75,4 +75,61 @@ module.exports = router => {
             }
         });
     });
+
+    // GET Edit page
+    router.get("/edit/:id", (req, res) => {
+        Movies.findMovieById({ _id: req.params.id }, (err, movie) => {
+            if (err) {
+                const error = { msg: "Error getting movie details" };
+                res.render("movies", { error });
+            } else {
+                res.render("edit-movies", { movie });
+            }
+        });
+    });
+
+    // POST Edit page
+    router.post("/edit/:id", (req, res) => {
+        const newMovie = {
+            title: req.body.title.trim(),
+            release_date: req.body.release_date.trim(),
+            genre: req.body.genre.trim(),
+            plot: req.body.plot.trim(),
+            director: req.body.director.trim(),
+            trailer: req.body.trailer.trim(),
+            cover: req.body.cover.trim()
+        };
+
+        if (
+            !newMovie.title ||
+            !newMovie.director ||
+            !newMovie.release_date ||
+            !newMovie.genre ||
+            !newMovie.plot
+        ) {
+            const error = { msg: "Missing movie info" };
+            Movies.findMovieById({ _id: req.params.id }, (err, movie) => {
+                if (err) {
+                    res.render("movies", { error });
+                } else {
+                    res.render("edit-movies", { error, movie });
+                }
+            });
+        } else {
+            Movies.editMovies(
+                { _id: req.params.id },
+                newMovie,
+                (err, movies) => {
+                    if (err) {
+                        const error = { msg: "Could not edit movie" };
+                        res.render(`/movies/details/${req.params.id}`, {
+                            error
+                        });
+                    } else {
+                        res.redirect(`/movies/details/${req.params.id}`);
+                    }
+                }
+            );
+        }
+    });
 };

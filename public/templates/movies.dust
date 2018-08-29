@@ -5,6 +5,7 @@
       <div>
         <img src="{.cover}" alt="{.title} cover">
         <h3>{.title}</h3>
+        <h6>{.release_date}</h6>
         <a href="/movies/details/{.id}">Info</a>
       <div>
     {:else}

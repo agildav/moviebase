@@ -16,8 +16,8 @@
           </label>
         </div>
         <div>
-          <label for="release_date">Release date
-            <input required type="date" name="release_date">
+          <label for="release_date">Release year
+            <input required type="number" name="release_date">
           </label>
         </div>
         <div>

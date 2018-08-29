@@ -1,0 +1,67 @@
+{>"layouts/master" /}
+
+{<body}
+    <div>
+      <a href="/movies/details/{movie._id}">Go back</a>
+      <h2>Edit movie</h2>
+      <form action="/movies/edit/{movie._id}" method="POST">
+        <div>
+          <label for="title">Title
+            <input required type="text" name="title" placeholder="The Godfather" value="{movie.title}">
+          </label>
+        </div>
+        <div>
+          <label for="director">Director
+            <input required type="text" name="director" placeholder="Francis Ford Coppola" value="{movie.director}">
+          </label>
+        </div>
+        <div>
+          <label for="release_date">Release year
+            <input value='{movie.release_date}'  required type="number" name="release_date">
+          </label>
+        </div>
+        <div>
+          <label for="genre">Genre
+            <select required name="genre" id="genre">
+              <option value="Action">Action</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Drama">Drama</option>
+              <option value="Documentary">Documentary</option>
+              <option value="Horror">Horror</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <label for="plot">Plot
+            <textarea required name="plot" id="plot" cols="30" rows="5">{movie.plot}</textarea>
+          </label>
+        </div>
+        <div>
+          <label for="cover">Cover URL
+            <input type="text" name="cover" placeholder="Image URL" value="{movie.cover}">
+          </label>
+        </div>
+        <div>
+          <label for="trailer">YouTube trailer code
+            <input type="text" name="trailer" value="{movie.trailer}">
+          </label>
+        </div>
+        <button type="submit">Submit!</button>
+      </form>
+    </div>
+    <div class="d-none" id="get-genre">{movie.genre}</div>
+    <script>
+      //  Pre select option field
+      const genre = document.getElementById("get-genre").innerText.toLowerCase().trim();
+      const GENRES = ["action","comedy","drama","documentary","horror","thriller","other"];
+
+      for (let i = 0; i < GENRES.length; i++) {
+        if (genre == GENRES[i].toLowerCase().trim()) {
+          const option = document.getElementsByTagName("option");
+          option[i].setAttribute("selected", "selected");
+        }
+      }
+    </script>
+{/body}
