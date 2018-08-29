@@ -6,10 +6,6 @@ $(document).ready(function() {
             type: "DELETE",
             url: "/movies/delete/" + $target.attr("data-movie-id"),
             success: function(response) {
-                $target
-                    .parent()
-                    .parent()
-                    .remove();
                 window.location.href = "/movies";
             },
             error: function(error) {

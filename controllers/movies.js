@@ -63,4 +63,16 @@ module.exports = router => {
             }
         });
     });
+
+    //  DELETE movie request
+    router.delete("/delete/:id", (req, res) => {
+        Movies.deleteMovies({ _id: req.params.id }, err => {
+            if (err) {
+                const error = { msg: "Could not delete movie" };
+                res.render("movies", { error });
+            } else {
+                res.sendStatus(200);
+            }
+        });
+    });
 };
