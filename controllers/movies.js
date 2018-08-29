@@ -132,4 +132,35 @@ module.exports = router => {
             );
         }
     });
+
+    // POST Search page
+    router.post("/search", (req, res) => {
+        Movies.search(
+            req.body.searchText,
+            { title: 1, plot: 1, cover: 1 },
+            {
+                conditions: {
+                    title: { $exists: true },
+                    plot: { $exists: true },
+                    cover: { $exists: true }
+                },
+                sort: { title: 1 },
+                limit: 15
+            },
+            (err, movies) => {
+                if (err) {
+                    const error = { msg: "Could not get movies" };
+                    res.render("movies", {
+                        error
+                    });
+                } else {
+                    const model = {
+                        movies: movies.results,
+                        searchText: { query: req.body.searchText }
+                    };
+                    res.render("movies", model);
+                }
+            }
+        );
+    });
 };

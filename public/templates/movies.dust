@@ -1,6 +1,9 @@
 {>"layouts/master" /}
 
 {<body}
+  {#searchText}
+    <h3>You searched for "{.query}"</h3>
+  {/searchText}
     {#movies}
       <div>
         <img src="{.cover}" alt="{.title} cover">

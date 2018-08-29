@@ -1,6 +1,7 @@
 "use strict";
 
 const mongoose = require("mongoose");
+const searchPlugin = require("mongoose-search-plugin");
 
 //  Movie Schema
 const movieSchema = mongoose.Schema({
@@ -12,6 +13,8 @@ const movieSchema = mongoose.Schema({
     trailer: String,
     cover: String
 });
+
+movieSchema.plugin(searchPlugin, { fields: ["title", "plot", "cover"] });
 
 //  Compile schema into model and export it
 const Movies = (module.exports = mongoose.model("Movies", movieSchema));
