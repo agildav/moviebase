@@ -1,5 +1,14 @@
 /* line 5, css/app */
 body {
-  background-color: #1d1d1d;
+  background-color: #1a1b1e;
   color: beige;
+}
+/* line 10, css/app */
+#particles-js canvas {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }

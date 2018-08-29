@@ -3,7 +3,6 @@
 var express = require("express");
 var kraken = require("kraken-js");
 const db = require("./lib/db"); //  Mongoose
-
 var options, app;
 
 /*

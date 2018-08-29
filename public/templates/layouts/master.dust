@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
         <title>Moviebase</title>
         <link rel="stylesheet" href='/bootstrap/css/bootstrap.min.css'>
         <link rel="stylesheet" href="/css/app.css">
     
     </head>
     <body>
+    
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 <div class='container'>
   <a class="navbar-brand" href="/">Moviebase</a>
@@ -23,19 +26,30 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search movie</button>
     </form>
   </div>
   </div>
 </nav>
+
+<div id="particles-js">
         <div id="wrapper" class='container'>
             {#error}
               <div>{.msg}</div>
             {/error}
             {+body /}
         </div>
-
+</div>
     
+        <script src="/js/particles.min.js">
+        </script>
+
+        <script type="text/javascript">
+          /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+          particlesJS.load('particles-js', '/particles.json', function() {
+            console.log('callback - particles.js config loaded');
+          });
+        </script>
         <script src="/bootstrap/jquery/jquery.min.js"></script>
         <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script data-main="/js/app" src="/components/requirejs/require.js"></script>

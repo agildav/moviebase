@@ -1,20 +1,16 @@
 /*global requirejs:true*/
-'use strict';
-
+"use strict";
 
 requirejs.config({
     paths: {}
 });
 
-
-require([/* Dependencies */], function () {
-
+require([
+    /* Dependencies */
+], function() {
     var app = {
-        initialize: function () {
-            // Your code here
-        }
+        initialize: function() {}
     };
 
     app.initialize();
-
 });
