@@ -1,14 +1,34 @@
 //  Variables
 @background: #1a1b1e;
+@primary: #f15500;
+@text: beige;
+@terciary: #de1a82;
 
 //  Init
 body {
     background-color: @background;
-    color: beige;
+    color: @text !important;
+    font-size: larger;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+label {
+    color: @text;
 }
 
 hr {
-    background-color: #de1a82;
+    background-color: @terciary;
+}
+
+.button {
+    background: @primary !important;
 }
 
 #particles-js canvas {
@@ -18,4 +38,22 @@ hr {
     left: 0;
     right: 0;
     z-index: -1;
+}
+
+.navbar {
+    font-size: large;
+}
+.navbar-brand {
+    font-size: 2rem;
+}
+
+.navbar-dark .navbar-brand:hover {
+    color: aqua;
+}
+#main {
+    margin-top: 7rem;
+}
+
+a {
+    color: aqua;
 }

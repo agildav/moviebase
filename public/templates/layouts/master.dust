@@ -5,53 +5,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="theme-color" content="#000000">
         <title>Moviebase</title>
-        <link rel="stylesheet" href='/bootstrap/css/bootstrap.min.css'>
+        <link rel="stylesheet" href='/components/bootstrap/css/bootstrap.min.css'>
         <link rel="stylesheet" href="/css/app.css">
     
     </head>
     <body>
     
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary container-fluid">
-          <div class="container">
-            <a class="navbar-brand" href="/">Moviebase</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarColor01">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/movies/add">Add movie <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Browse by genre</a>
-                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-                      <a class="dropdown-item" href="/movies/genre/Action">Action</a>
-                      <a class="dropdown-item" href="/movies/genre/Comedy">Comedy</a>
-                      <a class="dropdown-item" href="/movies/genre/Drama">Drama</a>
-                      <a class="dropdown-item" href="/movies/genre/Documentary">Documentary</a>
-                      <a class="dropdown-item" href="/movies/genre/Horror">Horror</a>
-                      <a class="dropdown-item" href="/movies/genre/Thriller">Thriller</a>
-                      <a class="dropdown-item" href="/movies/genre/Other">Other</a>
-                    </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+              <a class="navbar-brand" href="/">MovieBase</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/movies/add">Add movies <span class="sr-only">(current)</span></a>
                   </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0" method="post" action="/movies/search">
-                <input required class="form-control mr-sm-2" type="text" placeholder="Search" name="searchText">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search movie!</button>
-              </form>
+                  <li class="nav-item">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Browse by genre</a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/movies/genre/Action">Action</a>
+                            <a class="dropdown-item" href="/movies/genre/Comedy">Comedy</a>
+                             <a class="dropdown-item" href="/movies/genre/Drama">Drama</a>
+                             <a class="dropdown-item" href="/movies/genre/Documentary">Documentary</a>
+                             <a class="dropdown-item" href="/movies/genre/Horror">Horror</a>
+                             <a class="dropdown-item" href="/movies/genre/Thriller">Thriller</a>
+                             <a class="dropdown-item" href="/movies/genre/Other">Other</a>
+                          </div>
+                        </li>
+                  </li>
+                </ul>
+                <form method="POST" action="/movies/search" class="form-inline my-2 my-lg-0">
+                  <input name='searchText' class="form-control mr-sm-2" type="text" placeholder="Search">
+                  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </div>
             </div>
-          </div>
           </nav>
 
-<div id="particles-js">
-        <div id="wrapper" class='container'>
+<div id="particles-js"></div>
+
+<div id='main'>
+    <div class="container col-md-2">
             {#error}
-              <div>{.msg}</div>
+              <div class="alert-box alert">{.msg}</div>
             {/error}
             {+body /}
         </div>
 </div>
+
     
         <script src="/js/particles.min.js">
         </script>
@@ -62,8 +67,8 @@
             console.log('callback - particles.js config loaded');
           });
         </script>
-        <script src="/bootstrap/jquery/jquery.min.js"></script>
-        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/components/jquery/dist/jquery.min.js"></script>
+        <script src="/components/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/js/app.js"></script>
     </body>
 </html>

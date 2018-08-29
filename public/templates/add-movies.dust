@@ -5,24 +5,24 @@
       <a href="/movies">Go back</a>
       <h2>Add movie</h2>
       <form action="/movies/add" method="POST">
-        <div>
+        <div class="form-group">
           <label for="title">Title
-            <input required type="text" name="title" placeholder="The Godfather">
+            <input class="form-control" required type="text" name="title" placeholder="The Godfather">
           </label>
         </div>
-        <div>
+        <div class="form-group">
           <label for="director">Director
-            <input required type="text" name="director" placeholder="Francis Ford Coppola">
+            <input class="form-control" required type="text" name="director" placeholder="Francis Ford Coppola">
           </label>
         </div>
-        <div>
+        <div class="form-group">
           <label for="release_date">Release year
-            <input required type="number" name="release_date">
+            <input class="form-control" required type="number" name="release_date">
           </label>
         </div>
-        <div>
+        <div class="form-group">
           <label for="genre">Genre
-            <select required name="genre" id="genre">
+            <select class="form-control" required name="genre" id="genre">
               <option value="Action">Action</option>
               <option value="Comedy">Comedy</option>
               <option value="Drama">Drama</option>
@@ -33,22 +33,22 @@
             </select>
           </label>
         </div>
-        <div>
+        <div class="form-group">
           <label for="plot">Plot
-            <textarea required name="plot" id="plot" cols="30" rows="5"></textarea>
+            <textarea class="form-control" required name="plot" id="plot" cols="30" rows="5"></textarea>
           </label>
         </div>
-        <div>
+        <div class="form-group">
           <label for="cover">Cover URL
-            <input type="text" name="cover" placeholder="Image URL">
+            <input class="form-control" type="text" name="cover" placeholder="Image URL">
           </label>
         </div>
-        <div>
+        <div class="form-group">
           <label for="trailer">YouTube trailer code
-            <input type="text" name="trailer" placeholder="">
+            <input class="form-control" type="text" name="trailer" placeholder="">
           </label>
         </div>
-        <button type="submit">Add movie!</button>
+        <button class='btn btn-success' type="submit">Add movie!</button>
       </form>
     </div>
 {/body}

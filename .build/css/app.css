@@ -1,13 +1,30 @@
-/* line 5, css/app */
+/* line 8, css/app */
 body {
   background-color: #1a1b1e;
+  color: beige !important;
+  font-size: larger;
+}
+/* line 14, css/app */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+label {
   color: beige;
 }
-/* line 10, css/app */
+/* line 26, css/app */
 hr {
   background-color: #de1a82;
 }
-/* line 14, css/app */
+/* line 30, css/app */
+.button {
+  background: #f15500 !important;
+}
+/* line 34, css/app */
 #particles-js canvas {
   position: fixed;
   top: 0;
@@ -15,4 +32,24 @@ hr {
   left: 0;
   right: 0;
   z-index: -1;
+}
+/* line 43, css/app */
+.navbar {
+  font-size: large;
+}
+/* line 46, css/app */
+.navbar-brand {
+  font-size: 2rem;
+}
+/* line 50, css/app */
+.navbar-dark .navbar-brand:hover {
+  color: aqua;
+}
+/* line 53, css/app */
+#main {
+  margin-top: 7rem;
+}
+/* line 57, css/app */
+a {
+  color: aqua;
 }

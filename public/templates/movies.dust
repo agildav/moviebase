@@ -1,22 +1,14 @@
 {>"layouts/master" /}
 
 {<body}
-  {#searchText}
-    <a href="/movies">Go Back</a>
-    <h3>You searched for "{.query}"</h3>
-  {/searchText}
-  {#genre}
-    <a href="/movies">Go Back</a>
-    <h3>{.query} movies</h3>
-  {/genre}
-  {#movies}
-    <div>
-      <img src="{.cover}" alt="{.title} cover">
-      <h3>{.title}</h3>
-      <h6>{.release_date}</h6>
-      <a href="/movies/details/{.id}">Info</a>
-    <div>
-  {:else}
-      <h2>No movie result!</h2>
-  {/movies}
+    {#movies}
+      <div>
+        <img class="border" src="{.cover}">
+        <h3>{.title}</h3>
+        <a class="btn btn-info" href="/movies/details/{._id}">Info</a>
+      </div>
+      <br>
+    {:else}
+      <p>No Movie Results</p>
+    {/movies}
 {/body}

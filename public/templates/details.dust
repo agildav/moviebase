@@ -7,12 +7,12 @@
         <br>
         <h2>{.title}</h2>
         <label><strong>Directed by:</strong> {.director}</label>
-        <div>
         <br>
-          <img src="{.cover}">
+        <div>
+          <img class='border' src="{.cover}">
         </div>
         <br>
-        <div>
+        <div class="columns large-8 side-nav">
           <label><strong>Genre: </strong>{.genre}</label>
           <br>
           <label><strong>Release year: </strong>{.release_date}</label>
@@ -27,13 +27,18 @@
       <div>
         <h3>Trailer</h3>
         <br>
-        <iframe width="650" height="250" src="https://www.youtube.com/embed/{.trailer}" frameborder="0" allowfullscreen>
-        </iframe>
+
+        <div class="embed-responsive embed-responsive-4by3">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{.trailer}" allowfullscreen></iframe>
+          </div>
+        
       </div>
       <br>
+      <div>
       <a href="/movies/edit/{._id}">Edit</a> |
       <a href="#" class="delete-movie" data-movie-id="{._id}">Delete</a>
       <br>
+      </div>
     {:else}
         <h2>No movie result!</h2>
     {/movie}
