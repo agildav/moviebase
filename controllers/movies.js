@@ -51,4 +51,16 @@ module.exports = router => {
             });
         }
     });
+
+    // GET Details page
+    router.get("/details/:id", (req, res) => {
+        Movies.findMovieById({ _id: req.params.id }, (err, movie) => {
+            if (err) {
+                const error = { msg: "Error getting movie details" };
+                res.render("movies", { error });
+            } else {
+                res.render("details", { movie });
+            }
+        });
+    });
 };

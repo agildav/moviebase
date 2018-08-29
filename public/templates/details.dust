@@ -1,0 +1,40 @@
+{>"layouts/master" /}
+
+{<body}
+    {#movie}
+      <div>
+        <a href="/movies">Go Back</a>
+        <br>
+        <h2>{.title}</h2>
+        <label><strong>Directed by:</strong> {.director}</label>
+        <div>
+        <br>
+          <img src="{.cover}">
+        </div>
+        <br>
+        <div>
+          <label><strong>Genre: </strong>{.genre}</label>
+          <br>
+          <label><strong>Release date: </strong>{.release_date}</label>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <h3>Plot</h3>
+        <p>{.plot}</p>
+      </div>
+      <hr>
+      <div>
+        <h3>Trailer</h3>
+        <br>
+        <iframe width="650" height="250" src="https://www.youtube.com/embed/{.trailer}" frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+      <br>
+      <a href="/movies/edit/{._id}">Edit</a> |
+      <a href="#" class="delete-movie" data-movie-id="{._id}">Delete</a>
+      <br>
+    {:else}
+        <h2>No movie result!</h2>
+    {/movie}
+{/body}
