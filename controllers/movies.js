@@ -163,4 +163,23 @@ module.exports = router => {
             }
         );
     });
+
+    // Filter genre
+    router.get("/genre/:genre", function(req, res) {
+        Movies.find({ genre: req.params.genre }, function(err, movies) {
+            if (err) {
+                const error = { msg: "Could not get movies" };
+                res.render("movies", {
+                    error
+                });
+            } else {
+                const model = {
+                    movies,
+                    genre: { query: req.params.genre }
+                };
+
+                res.render("movies", model);
+            }
+        });
+    });
 };

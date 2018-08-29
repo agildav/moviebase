@@ -11,26 +11,38 @@
     </head>
     <body>
     
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary container-fluid">
-<div class='container'>
-  <a class="navbar-brand" href="/">Moviebase</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/movies/add">Add movie</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0" method="post" action="/movies/search">
-      <input required class="form-control mr-sm-2" type="text" name="searchText" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search movie</button>
-    </form>
-  </div>
-  </div>
-</nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary container-fluid">
+          <div class="container">
+            <a class="navbar-brand" href="/">Moviebase</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/movies/add">Add movie <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Browse by genre</a>
+                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+                      <a class="dropdown-item" href="/movies/genre/Action">Action</a>
+                      <a class="dropdown-item" href="/movies/genre/Comedy">Comedy</a>
+                      <a class="dropdown-item" href="/movies/genre/Drama">Drama</a>
+                      <a class="dropdown-item" href="/movies/genre/Documentary">Documentary</a>
+                      <a class="dropdown-item" href="/movies/genre/Horror">Horror</a>
+                      <a class="dropdown-item" href="/movies/genre/Thriller">Thriller</a>
+                      <a class="dropdown-item" href="/movies/genre/Other">Other</a>
+                    </div>
+                  </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0" method="post" action="/movies/search">
+                <input required class="form-control mr-sm-2" type="text" placeholder="Search" name="searchText">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search movie!</button>
+              </form>
+            </div>
+          </div>
+          </nav>
 
 <div id="particles-js">
         <div id="wrapper" class='container'>
