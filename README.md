@@ -1,5 +1,5 @@
 # Moviebase-app
-Simple movie listing app using kraken.js
+Movie listing app using kraken.js
 
 
 # See the live app 
