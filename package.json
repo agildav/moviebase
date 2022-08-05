@@ -19,7 +19,7 @@
         "express": "^4.12.2",
         "kraken-js": "^2.0.0",
         "makara": "^2.0.3",
-        "mongoose": "^5.2.9",
+        "mongoose": "^5.7.5",
         "mongoose-search-plugin": "^0.1.2",
         "requirejs": "^2.3.5"
     },
